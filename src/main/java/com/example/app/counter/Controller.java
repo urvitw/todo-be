@@ -1,4 +1,4 @@
-package com.example.todo;
+package com.example.app.counter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @Autowired
-    private TodoService todoService;
+    private CounterService counterService;
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "/new",produces = {"application/json"})
     public ResponseEntity<Object>  index() {
-        return new ResponseEntity<>(todoService.getRandomNumber(), HttpStatus.OK);
+        return new ResponseEntity<>(counterService.getRandomNumber(), HttpStatus.OK);
 
     }
 
